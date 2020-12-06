@@ -41,4 +41,5 @@ public class Foo2 {
         UnaryOperator<Integer> plus5 = i -> i +5;
         System.out.println(plus5.apply(5));
     }
+
 }

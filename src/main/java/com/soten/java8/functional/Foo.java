@@ -7,6 +7,9 @@ package com.soten.java8.functional;
   아래 구현 처럼 구현하고 있다면 순수함수는 아니며, (4)를 사용할 경우 컴파일 에러가 난다.
  */
 
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+
 public class Foo {
 
     public static void main(String[] args) {
@@ -21,6 +24,50 @@ public class Foo {
             }
         };
         // (4) baseNumber++;
-
     }
+
+    /*
+      익명 클래스와 로컬클래스는 baseNumber를 참조할 수 있다.
+      그리고 (1)과 (2) 처럼 같은 변수명을 가지고 있다면 자기 자신의 것을 사용할 수 있고,
+      baseNumber2 처럼 참조만 할 수도 있다.
+      이에 반해 람다에서는 같은 변수명을 재정의 할 수 없다.
+
+      즉, 람다는 같은 스코프(공유 범위)이고, 로컬 클래스와 익명 클래스는 다른 스코프다.
+
+      또한, Java 1.8 버전 부터는 변수 앞에 final을 선언하지 않아도 되는 경우가 있다. (사실상 final인 경우)
+
+
+     */
+
+    private void run() {
+        final int baseNumber = 10; // final은 한번 선언해주면 값이 변하지 않아야함. (여기서는 생략 가능)
+        int baseNumber2 = 20;
+
+        // 로컬 클래스
+        class LocalClass {
+            void printBaseNumber() {
+                int baseNumber = 15; // (1)
+                System.out.println(baseNumber);
+                System.out.println(baseNumber2);
+            }
+        }
+
+        // 익명 클래스
+        Consumer<Integer> integerConsumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                int baseNumber = 15; // (2)
+                System.out.println(baseNumber);
+            }
+        };
+
+        // 람다
+        IntConsumer printInt = (i) -> {
+//            int baseNumber = 5;    <<< 사용 불가
+            System.out.println(i + baseNumber);
+        };
+
+        printInt.accept(10);
+     }
+
 }
