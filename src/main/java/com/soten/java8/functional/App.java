@@ -1,6 +1,9 @@
 package com.soten.java8.functional;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Spliterator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -38,6 +41,6 @@ public class App {
 
         System.out.println(Arrays.toString(names));
 
-
     }
+
 }

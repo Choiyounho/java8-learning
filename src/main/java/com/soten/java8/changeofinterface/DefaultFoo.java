@@ -30,4 +30,5 @@ public class DefaultFoo implements Foo3, Bar {
     public String getName() {
         return this.name;
     }
+
 }

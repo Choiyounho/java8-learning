@@ -6,6 +6,4 @@ public interface Bar {
         System.out.println("BAR");
     }
 
-
-
 }
