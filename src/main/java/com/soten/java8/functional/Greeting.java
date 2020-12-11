@@ -24,4 +24,15 @@ public class Greeting {
         return "Hi " + name;
     }
 
+
+    /**
+     *
+     *
+     * @param number1 첫번째 매개변수
+     * @param number2 두번째 매개변수
+     * @return number1과 number2를 더한 합
+     */
+    private int sum(int number1, int number2) {
+        return number1 + number2;
+    }
 }
