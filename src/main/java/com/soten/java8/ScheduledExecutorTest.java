@@ -20,5 +20,5 @@ public class ScheduledExecutorTest {
         System.out.println(message + Thread.currentThread().getName());
         return () -> System.out.println(message + Thread.currentThread().getName());
     }
-    
+
 }
