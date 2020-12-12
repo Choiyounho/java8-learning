@@ -1,4 +1,4 @@
-package com.soten.java8.etc;
+package com.soten.java8.etc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
