@@ -1,7 +1,5 @@
 package com.soten.java8.stream;
 
-import com.soten.java8.Progress;
-
 import java.util.Optional;
 
 public class OnlineClass {

@@ -1,4 +1,4 @@
-package com.soten.java8;
+package com.soten.java8.stream;
 
 import java.time.Duration;
 
